@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@use './app/styles/colors';
+@use './app/styles/breakpoints' as *;
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--blue-900);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  height: 100vw;
+  background-image: url('/images/res-render-1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+@include respond-to(sm) {
+  body::before {
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+  }
+}
