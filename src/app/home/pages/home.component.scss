@@ -1,0 +1,31 @@
+@use '../../styles/breakpoints' as *;
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    background-image: url('/images/res-render-1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  @include respond-to(sm) {
+    &::before {
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
