@@ -21,7 +21,7 @@
     transition: transform 0.3s ease;
   }
 
-  @include respond-to(sm) {
+  @include respond-to(md) {
     &::before {
       width: 100vw;
       height: 100vh;

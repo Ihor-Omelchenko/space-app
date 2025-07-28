@@ -1,0 +1,133 @@
+@use '../../../styles/breakpoints' as *;
+
+.header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding: var(--space-6);
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  .logo {
+    width: var(--space-8);
+    height: var(--space-8);
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .burger {
+    z-index: 3;
+
+    img {
+      width: var(--space-6);
+    }
+  }
+
+  .nav-desktop {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: var(--space-9);
+      padding: 0 var(--space-8) 0 var(--space-13);
+      margin: 0;
+
+      li {
+        padding: var(--space-8) 0;
+
+        &.active {
+          border-bottom: 2px solid var(--white);
+        }
+
+        &:hover {
+          border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        a {
+          color: var(--white);
+          text-decoration: none;
+
+
+          span {
+            padding-right: var(--space-4);
+          }
+        }
+      }
+    }
+  }
+
+  .nav-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    padding: var(--space-13) var(--space-7);
+    z-index: 2;
+    padding-right: 0;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-7);
+      padding: 0;
+
+      li {
+
+        &.active {
+          border-right: 2px solid var(--white);
+        }
+
+        &:hover {
+          border-right: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        a {
+          color: var(--white);
+          text-decoration: none;
+
+          span {
+            padding-right: var(--space-4);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm) {
+  .header {
+    padding: 0;
+
+    .logo {
+      padding: var(--space-6) var(--space-8);
+    }
+
+    .burger {
+      display: none;
+    }
+
+    .nav-desktop {
+      display: block;
+    }
+
+    .nav-mobile {
+      display: none;
+    }
+  }
+}
