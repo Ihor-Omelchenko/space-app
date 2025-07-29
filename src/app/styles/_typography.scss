@@ -1,7 +1,18 @@
+@use './breakpoints' as *;
+
 .text-preset-1 {
-  font-size: 144px;
+  font-size: 80px;
   line-height: normal;
   letter-spacing: 0;
+
+  @include respond-to(sm) {
+    font-size: 100px;
+    letter-spacing: 0.2em;
+  }
+
+  @include respond-to(md) {
+    font-size: 110px;
+  }
 }
 
 .text-preset-2 {
@@ -29,9 +40,14 @@
 }
 
 .text-preset-6 {
-  font-size: 28px;
+  font-size: 16px;
   line-height: normal;
-  letter-spacing: 0;
+  letter-spacing: 0.15em;
+
+  @include respond-to(sm) {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+  }
 }
 
 .text-preset-7 {
@@ -54,7 +70,17 @@
 }
 
 .text-preset-9 {
-  font-size: 18px;
-  line-height: normal;
+  font-size: 19px;
+  line-height: 140%;
   letter-spacing: 0;
+
+  @include respond-to(sm) {
+    font-size: 20px;
+    line-height: 180%;
+  }
+
+  @include respond-to(md) {
+    font-size: 23px;
+    line-height: 150%;
+  }
 }

@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   padding: var(--space-6);
-  z-index: 1;
+  z-index: 2;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
@@ -112,9 +112,12 @@
 
 @include respond-to(sm) {
   .header {
+    max-height: 100px;
     padding: 0;
 
     .logo {
+      width: var(--space-9);
+      height: var(--space-9);
       padding: var(--space-6) var(--space-8);
     }
 
@@ -129,5 +132,11 @@
     .nav-mobile {
       display: none;
     }
+  }
+}
+
+@include respond-to(md) {
+  .header {
+    top: var(--space-6);
   }
 }
