@@ -1,9 +1,44 @@
 <div class="wrapper">
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolorem doloribus enim et labore laboriosam
-      molestiae obcaecati perspiciatis, quas sint tenetur, veritatis vero vitae voluptate voluptatem voluptates
-      voluptatibus. Consequatur, doloribus id. Aspernatur debitis dolor nisi quam vero. Aperiam blanditiis corporis
-      inventore iste, magni optio, quaerat ratione sequi, ut vero voluptas.</p>
+  <div class="main-container">
+    <div class="title-page">
+      <p class="text-preset-6">
+        <span>01</span>
+        PICK YOUR DESTINATION
+      </p>
+    </div>
+    <div class="content">
+      <div class="image-container">
+        <img src="/images/planets/moon.svg">
+      </div>
+      <div class="info-container">
+        <app-tabs [tabs]="['MOON', 'MARS', 'EUROPA', 'TITAN']"/>
+
+        <div class="text">
+          <p class="text-preset-2 title">
+            MOON
+          </p>
+          <p class="text-preset-9 description">
+            See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and
+            come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing
+            sites.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="statistics">
+          <div class="distance">
+            <p class="text-preset-7 title">AVG. DISTANCE</p>
+            <p class="text-preset-6 value">384,400 KM</p>
+          </div>
+
+          <div class="travel-time">
+            <p class="text-preset-7 title">EST. TRAVEL TIME</p>
+            <p class="text-preset-6 value">3 DAYS</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

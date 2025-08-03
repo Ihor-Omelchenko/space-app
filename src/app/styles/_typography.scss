@@ -16,9 +16,17 @@
 }
 
 .text-preset-2 {
-  font-size: 100px;
+  font-size: 56px;
   line-height: normal;
   letter-spacing: 0;
+
+  @include respond-to(sm) {
+    font-size: 80px;
+  }
+
+  @include respond-to(md) {
+
+  }
 }
 
 .text-preset-3 {
@@ -40,9 +48,9 @@
 }
 
 .text-preset-6 {
-  font-size: 16px;
+  font-size: 28px;
   line-height: normal;
-  letter-spacing: 0.15em;
+  letter-spacing: 0;
 
   @include respond-to(sm) {
     font-size: 24px;
@@ -70,8 +78,8 @@
 }
 
 .text-preset-9 {
-  font-size: 19px;
-  line-height: 140%;
+  font-size: 15px;
+  line-height: 180%;
   letter-spacing: 0;
 
   @include respond-to(sm) {
