@@ -1,42 +1,37 @@
 <div class="wrapper">
   <div class="main-container">
     <div class="title-page">
-      <p class="text-preset-6">
-        <span>01</span>
-        PICK YOUR DESTINATION
-      </p>
+      <p class="text-preset-6"><span>01</span>PICK YOUR DESTINATION</p>
     </div>
     <div class="content">
       <div class="image-container">
-        <img src="/images/planets/moon.svg">
+        @if (activePlanet(); as planet) {
+          <img [src]="planet.image" [alt]="planet.name" [@fadeInOut]="planet.name">
+        }
+
       </div>
       <div class="info-container">
-        <app-tabs [tabs]="['MOON', 'MARS', 'EUROPA', 'TITAN']"/>
+        <app-tabs [tabs]="['MOON', 'MARS', 'EUROPA', 'TITAN']" (tabChange)="onTabChange($event)"/>
 
-        <div class="text">
-          <p class="text-preset-2 title">
-            MOON
-          </p>
-          <p class="text-preset-9 description">
-            See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and
-            come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing
-            sites.
-          </p>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="statistics">
-          <div class="distance">
-            <p class="text-preset-7 title">AVG. DISTANCE</p>
-            <p class="text-preset-6 value">384,400 KM</p>
+        @if (activePlanet(); as planet) {
+          <div class="text" [@fadeInOut]="planet.name">
+            <p class="text-preset-2 title">{{ planet.name }}</p>
+            <p class="text-preset-9 description">{{ planet.description }}</p>
           </div>
 
-          <div class="travel-time">
-            <p class="text-preset-7 title">EST. TRAVEL TIME</p>
-            <p class="text-preset-6 value">3 DAYS</p>
+          <div class="line"></div>
+
+          <div class="statistics" [@fadeInOut]="planet.name">
+            <div class="distance">
+              <p class="text-preset-7 title">AVG. DISTANCE</p>
+              <p class="text-preset-6 value">{{ planet.distance }}</p>
+            </div>
+            <div class="travel-time">
+              <p class="text-preset-7 title">EST. TRAVEL TIME</p>
+              <p class="text-preset-6 value">{{ planet.travelTime }}</p>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   </div>
